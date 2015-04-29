@@ -33,8 +33,8 @@ var commonJS = (function(){
 		};
 	}
 
-
-	/**
+  
+	/**     
 
 		Gets a url, and makes a key value pair of the query string parameter.
 	
