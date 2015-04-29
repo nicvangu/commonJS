@@ -1,4 +1,6 @@
 
+var commonJS = (function(){
+
 	function isType (fields) {
 		return function(obj) {
 			for (var i = 0; i < fields.length; i++) {
@@ -31,6 +33,5 @@
 
 	
 })();
-
 
 
