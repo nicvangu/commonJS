@@ -1,6 +1,26 @@
 
 var commonJS = (function(){
 
+	/**
+
+		This function checks for duck types. 
+		http://en.wikipedia.org/wiki/Duck_typing
+
+		Implementation:
+
+		function product (productName, description) {
+			this.productName = productName;
+			this.description = description;
+		}
+
+		var isProduct = isType(["productName", "description"]);
+		var ball = new product("ball", "round");
+
+		console.log(isProduct(ball));
+	
+	//**/
+
+
 	function isType (fields) {
 		return function(obj) {
 			for (var i = 0; i < fields.length; i++) {
@@ -12,6 +32,14 @@ var commonJS = (function(){
 			return true;
 		};
 	}
+
+
+	/**
+
+		Gets a url, and makes a key value pair of the query string parameter.
+	
+	//**/
+
 
 	function getQueryStringParamaters (urlString) {
 		var queryString = urlString.substring(urlString.indexOf('?') + 1);
@@ -33,5 +61,6 @@ var commonJS = (function(){
 
 	
 })();
+
 
 
