@@ -1,5 +1,5 @@
 
-var commonJS = (function(){
+var common = (function(){
 
 	/**
 
@@ -54,13 +54,20 @@ var commonJS = (function(){
 		return ret;
 	}
 
+
+	// Finds if a value is contrained with an array. Works with strings. 
+
+	function contains (arr, value) {
+		return arr.indexOf(value) > -1;
+	}
+
 	return {
 		"getQueryStringParamaters": getQueryStringParamaters,
-		"isType": isType
+		"isType": isType,
+		"contains": contains
 	};
 
 	
 })();
 
-
-
+var cmn = common;
