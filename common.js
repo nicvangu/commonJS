@@ -33,14 +33,8 @@ var common = (function(){
 		};
 	}
 
-  
-	/**     
-
-		Gets a url, and makes a key value pair of the query string parameter.
-	
-	//**/
-
-
+	// Gets a url, and makes a key value pair of the query string parameter.
+		
 	function getQueryStringParamaters (urlString) {
 		var queryString = urlString.substring(urlString.indexOf('?') + 1);
 		var queryParams = queryString.split('&');
@@ -55,19 +49,46 @@ var common = (function(){
 	}
 
 
-	// Finds if a value is contrained with an array. Works with strings. 
+	// Finds if a value is contained with an array. Works with strings. 
 
-	function contains (arr, value) {
+	function exists (arr, value) {
 		return arr.indexOf(value) > -1;
 	}
 
+	function linkData (address, text, className, id) {
+		this.address = address;
+		this.text = text;
+		this.className = className;
+		this.id = id;
+	}
+
+	function createLink (data) {
+		if (data.address === undefined || data.address === null || data.text === undefined || data.text === null){
+			console.error("Could not create link. The address attribute was " + data.address + ", and the text attribute was " + data.text + ".");
+		} else {
+			var ret = "<a href='" + data.address + "' ";
+		
+			if(data.className !== null){
+				ret += "class='" + data.className + "' ";
+			};
+
+			if (data.id !== undefined) {
+				ret += "id='" + data.id + "' ";
+			};
+			ret += ">" + data.text + "</a>";
+			return ret; 
+		}
+	}
+
+
 	return {
-		"getQueryStringParamaters": getQueryStringParamaters,
-		"isType": isType,
-		"contains": contains
+		getQueryStringParamaters: getQueryStringParamaters,
+		isType: isType,
+		exists: exists,
+		linkData : linkData,
+		createLink : createLink
 	};
 
 	
 })();
 
-var cmn = common;
