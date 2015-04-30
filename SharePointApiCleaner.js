@@ -24,7 +24,7 @@ var SharePointApiCleaner = (function(){
         }; 
 
         if(arguments.length === 0){
-            console.log("No arguments were passed into the SharePointApiCleaner");
+            console.error("Error in clean. No arguments were passed into the SharePointApiCleaner");
             return restData;
         } else {
             for (var i = 1; i < arguments.length; i++) {
