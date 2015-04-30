@@ -1,5 +1,5 @@
 
-var common = (function(){
+var Common = (function(){
 
 	/**
 
@@ -64,7 +64,7 @@ var common = (function(){
 
 	function createLink (data) {
 		if (data.address === undefined || data.address === null || data.text === undefined || data.text === null){
-			console.error("Could not create link. The address attribute was " + data.address + ", and the text attribute was " + data.text + ".");
+			console.error("Error in createLink. The 'address' attribute was " + data.address + ", and the 'text' attribute was " + data.text + ".");
 		} else {
 			var ret = "<a href='" + data.address + "' ";
 		
